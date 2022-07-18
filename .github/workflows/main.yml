@@ -22,7 +22,7 @@ jobs:
       - name: Show Response
         id: getRate
         run: |
-          echo "${{ steps.myRequest.outputs.response }}" | jq '.[0].rate'
+          echo '${{ steps.myRequest.outputs.response }}' | jq '.[0].rate'
           echo "::set-output rate=29"
 
       - name: Notify
