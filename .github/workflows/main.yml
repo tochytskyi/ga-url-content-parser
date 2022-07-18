@@ -9,7 +9,7 @@ on:
       - 'master'
 
 env:
-  MAX_RATE: 29
+  MAX_RATE: 35
 
 jobs:
   build:
@@ -36,5 +36,5 @@ jobs:
         if: ${{ steps.getRate.outputs.rate }} > ${{ env.MAX_RATE }}
         env:
           API_KEY: ${{ secrets.PUSH_SECRET }}
-          MESSAGE: "Dollar is above 35"
+          MESSAGE: "USD is above 35"
           TITLE: "Ura!"

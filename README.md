@@ -1,2 +1,5 @@
 # ga-url-content-parser
-Parse remote urls and push notifications
+Parse NBU and notify about USD rate greater than 35 uah
+
+
+
