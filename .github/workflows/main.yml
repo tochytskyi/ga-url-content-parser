@@ -9,7 +9,7 @@ on:
       - 'master'
 
 env:
-  MAX_RATE: 35
+  MAX_RATE: 29
 
 jobs:
   build:
