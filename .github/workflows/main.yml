@@ -22,8 +22,8 @@ jobs:
       - name: Show Response
         id: getRate
         run: |
-          echo '${{ steps.myRequest.outputs.response }}' | jq '.[0].rate'
-          echo "::set-output rate=29"
+          echo '${{ steps.myRequest.outputs.response }}'
+          echo "::set-output rate='${{ steps.myRequest.outputs.response }}' | jq '.[0].rate'"
 
       - name: Notify
         if: ${{ steps.getRate.outputs.rate > 28 }}
