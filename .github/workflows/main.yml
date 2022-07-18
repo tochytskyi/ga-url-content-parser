@@ -1,0 +1,30 @@
+name: Parse json url
+
+on:
+  schedule:
+    # every 5 minutes, see https://crontab.guru
+    - cron: '*/5 * * * *'
+  push:
+    branches:
+      - 'master'
+jobs:
+  build:
+    name: Trigger Site Rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make Request
+        id: myRequest
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json"
+
+      - name: Show Response
+        id: getRate
+        run: |
+          echo ${{ steps.myRequest.outputs.response }}
+          echo "::set-output rate=${{ fromJson(steps.myRequest.outputs.response).0.rate }}"
+
+      - name: Notify
+        if: ${{ steps.getRate.outputs.rate > 28 }}
+        run: |
+          echo "Great!"
