@@ -1,9 +1,9 @@
 name: Parse json url
 
 on:
-  schedule:
+  #schedule:
     # every 5 minutes, see https://crontab.guru
-    - cron: '*/5 * * * *'
+  #  - cron: '*/5 * * * *'
   push:
     branches:
       - 'master'
