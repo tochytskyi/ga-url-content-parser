@@ -4,9 +4,9 @@ on:
   schedule:
     # every 5 minutes, see https://crontab.guru
     - cron: '*/30 * * * *'
-  push:
-    branches:
-      - 'master'
+  #push:
+  #  branches:
+  #    - 'master'
 
 jobs:
   build:
