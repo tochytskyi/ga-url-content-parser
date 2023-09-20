@@ -44,7 +44,7 @@ jobs:
           if matching_elements:
             for element in matching_elements:
                 if "js_product-fast-variant" not in element.get('class'):
-                    print(1)
+                    print(0)
                     break
           else:
             print(1)
