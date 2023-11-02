@@ -1,9 +1,9 @@
 name: Parse url
 
 on:
-  schedule:
+  #schedule:
     # every 5 minutes, see https://crontab.guru
-    - cron: '*/30 * * * *'
+    #- cron: '*/30 * * * *'
   #push:
   #  branches:
   #    - 'master'
